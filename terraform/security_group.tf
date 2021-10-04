@@ -9,6 +9,12 @@ resource "aws_security_group" "sg_openswan" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
+    from_port   = 500
+    to_port     = 500
+    protocol    = "udp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
     from_port   = 4500
     to_port     = 4500
     protocol    = "tcp"
